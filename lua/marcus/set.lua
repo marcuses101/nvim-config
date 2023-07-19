@@ -32,5 +32,7 @@ vim.opt.updatetime = 50
 vim.g.mapleader = " "
 
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.api.nvim_command('au TextYankPost * silent! lua vim.highlight.on_yank()')
