@@ -17,9 +17,18 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-y>'] = cmp.mapping.confirm({
+        select = true,
+        behavior = cmp.ConfirmBehavior.Insert,
+    }),
+    ['<CR>'] = cmp.mapping.confirm({
+        select = true,
+        behavior = cmp.ConfirmBehavior.Insert,
+    }),
+    ['<Tab>'] = cmp.mapping.confirm({
+        select = true,
+        behavior = cmp.ConfirmBehavior.Insert,
+    }),
     ["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -31,7 +40,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
+    suggest_lsp_servers = true,
     sign_icons = {
         error = 'E',
         warn = 'W',
@@ -63,6 +72,8 @@ lsp.format_on_save({
     servers = {
         ['rust_analyzer'] = { 'rust' },
         ['lua_ls'] = { 'lua' },
+        ['svelte'] = { 'svelte' },
+        ['prismals'] = { 'prisma' },
     }
 })
 
