@@ -28,6 +28,7 @@ require("formatter").setup {
         -- any filetype
     }
 }
+
 vim.api.nvim_exec([[
  augroup FormatAutogroup
    autocmd!
