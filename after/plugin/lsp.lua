@@ -6,6 +6,7 @@ lsp.ensure_installed({
     'tsserver',
     'eslint',
     'rust_analyzer',
+    "gopls"
 })
 
 -- Fix Undefined global 'vim'
@@ -70,6 +71,7 @@ lsp.format_on_save({
         timeout_ms = 10000,
     },
     servers = {
+        ['gopls'] = { 'go' },
         ['rust_analyzer'] = { 'rust' },
         ['lua_ls'] = { 'lua' },
         ['svelte'] = { 'svelte' },

@@ -39,3 +39,5 @@ vim.api.nvim_command('au TextYankPost * silent! lua vim.highlight.on_yank()')
 
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
+
+vim.opt.inccommand = 'split'

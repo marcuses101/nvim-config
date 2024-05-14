@@ -35,3 +35,10 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
+
+vim.keymap.set('n', "<leader>lr", "<cmd>LspRestart<CR>")
+
+-- comment line
+vim.keymap.set("v", "<Leader>cc", [[:s/^/\/\/ <CR>]])
+-- un-comment line
+vim.keymap.set("v", "<Leader>cu", [[:s/^\s*\/\/ *// <CR>]])

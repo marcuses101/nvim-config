@@ -12,19 +12,29 @@ return require('packer').startup(function(use)
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
     })
-
     use({
-        'lalitmee/cobalt2.nvim',
-        requires = 'tjdevries/colorbuddy.nvim',
+        "folke/tokyonight.nvim",
+        as = "tokyonight",
         config = function()
-            -- require('colorbuddy').colorscheme('cobalt2')
+            require("tokyonight").setup({
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+                transparent = true,     -- Enable this to disable setting the background color
+                terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+                styles = {
+                    -- Style to be applied to different syntax groups
+                    -- Value is any valid attr-list value for `:help nvim_set_hl`
+                    comments = { italic = false },
+                    keywords = { italic = false },
+                    -- Background styles. Can be "dark", "transparent" or "normal"
+                    sidebars = "dark", -- style for sidebars, see below
+                    floats = "dark",   -- style for floating windows
+                },
+            })
         end
     })
-    require('colorbuddy').colorscheme('cobalt2');
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
