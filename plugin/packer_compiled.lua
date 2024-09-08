@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/marcus/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-comment"] = {
+    loaded = true,
+    path = "/home/marcus/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/marcus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -123,6 +128,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcus/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["oil.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0" },
+    loaded = true,
+    path = "/home/marcus/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -150,7 +161,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   tokyonight = {
-    config = { "\27LJ\2\nÍ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\vstyles\rkeywords\1\0\1\vitalic\1\rcomments\1\0\2\rsidebars\tdark\vfloats\tdark\1\0\1\vitalic\1\1\0\3\nstyle\nstorm\16transparent\2\20terminal_colors\2\nsetup\15tokyonight\frequire\0" },
+    config = { "\27LJ\2\nÍ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\vstyles\rkeywords\1\0\1\vitalic\1\rcomments\1\0\2\rsidebars\tdark\vfloats\tdark\1\0\1\vitalic\1\1\0\3\nstyle\nstorm\20terminal_colors\2\16transparent\2\nsetup\15tokyonight\frequire\0" },
     loaded = true,
     path = "/home/marcus/.local/share/nvim/site/pack/packer/start/tokyonight",
     url = "https://github.com/folke/tokyonight.nvim"
@@ -168,9 +179,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: oil.nvim
+time([[Config for oil.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
+time([[Config for oil.nvim]], false)
 -- Config for: tokyonight
 time([[Config for tokyonight]], true)
-try_loadstring("\27LJ\2\nÍ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\vstyles\rkeywords\1\0\1\vitalic\1\rcomments\1\0\2\rsidebars\tdark\vfloats\tdark\1\0\1\vitalic\1\1\0\3\nstyle\nstorm\16transparent\2\20terminal_colors\2\nsetup\15tokyonight\frequire\0", "config", "tokyonight")
+try_loadstring("\27LJ\2\nÍ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\vstyles\rkeywords\1\0\1\vitalic\1\rcomments\1\0\2\rsidebars\tdark\vfloats\tdark\1\0\1\vitalic\1\1\0\3\nstyle\nstorm\20terminal_colors\2\16transparent\2\nsetup\15tokyonight\frequire\0", "config", "tokyonight")
 time([[Config for tokyonight]], false)
 
 _G._packer.inside_compile = false
