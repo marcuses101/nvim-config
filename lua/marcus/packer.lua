@@ -9,6 +9,16 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    use {
+        'StephenGunn/sveltecheck.nvim',
+        config = function()
+            require('sveltecheck').setup({
+                command = "npm run check:machine", -- Default command for pnpm
+            })
+        end
+    }
+
+
     use({
         "stevearc/oil.nvim",
         config = function()
